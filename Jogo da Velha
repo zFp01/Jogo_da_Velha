@@ -1,0 +1,29 @@
+def imprime_tabuleiro():
+  for linha in tabuleiro:
+    print(linha)
+
+def jogo_acabou():
+  #Verifica se o tabuleiro está TOTALMENTE
+  #preenchido e se alguém ganhou o jogo
+  return False #Por enquanto é falso que o jogo acabou
+
+tabuleiro = [ [' ',' ',' '], [' ',' ',' '], [' ',' ',' '] ]
+jogador = 'X'
+
+#Enquanto o tabuleiro não está TOTALMENTE
+#preenchido e ninguém ganhou continua o jogo
+while not jogo_acabou():
+  print("Jogador ", jogador, "em qual linha deseja jogar?")
+  linha = int(input())
+  print("Jogador ", jogador, "em qual coluna deseja jogar?")
+  coluna = int(input())
+  tabuleiro[linha][coluna] = jogador
+
+  #Imprime o tabuleiro
+  imprime_tabuleiro()
+
+  #Muda o jogador corrente
+  if jogador == 'X':
+    jogador = 'O'
+  else:
+    jogador = 'X'
